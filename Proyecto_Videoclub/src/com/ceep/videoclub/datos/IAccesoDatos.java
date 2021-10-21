@@ -1,46 +1,42 @@
 
 package com.ceep.videoclub.datos;
 
+import com.ceep.videoclub.dominio.Pelicula;
+import com.ceep.videoclub.excepciones.AccesoDatosExcepciones;
+import com.ceep.videoclub.excepciones.EscrituraDatosEx;
+import com.ceep.videoclub.excepciones.LecturaDatosEx;
+import java.util.*;
+
 
 public interface IAccesoDatos {
-    //metodos existe, escribir, listar, buscar, crear
+   //MÉTODOS PÚBLICOS Y ABSTRACTOS POR SER INTERFAZ
+    /*EN LA CLASE QUE IMPLEMENTA A LA INTERFAZ DEFINIMOS ESTMOS MÉTODOS*/
     
-    void existe(String nombreArchivo);
+    //Comprueba si el fichero existe
+    boolean existe(String nombreArchivo); //va a poder generar una excepcion de accesoDatos ( de las tres que he creado)
     
-    void listar(String nombreArchivo);
+    //Devuelve una lista de peliculas contenidas en el archivo nombreArchivo.
+    List<Pelicula>listar(String nombreArchivo) throws LecturaDatosEx;
     
-    void crear(String nombreArchivo);
+    //Escribe una nueva película en el archivo nombreArchivo
+    //con el parámetro anexar podemos indicar si queremos agregar la película o sobreescribir
+    void escribir(Pelicula pelicula, String nombreArchivo, boolean anexar) throws EscrituraDatosEx;
     
-    void buscar(String nombreArchivo);
+    //Busca la expresión de buscar en el archivo y nos muestra los mensajes
+    //en caso de que lo encuentre o no.
+    String buscar(String nombreArchivo, String buscar) throws LecturaDatosEx;
+    
+    //Crea el archivo
+    void crear(String nombreArchivo) throws AccesoDatosExcepciones ;
+    
+    //Borra el archivo
+    void borrar(String nombreArchivo);
+    
+    
+    
+    
     
     
 }
 
 
-/*
-
-//metodos EXISTE (String): boolean y LISTAR
-    
-    public boolean existe(String nombreArchivo){
-        var a=0;
-        return true;
-    }
-    
-    public String listar(String nombreArchivo){
-        //array List películar
-        return nombreArchivo;
-    }
-    
-    public void escribir(boolean anexar){
-        
-    }
-    
-    public String crear(String nombreArchivo){
-        //
-        return nombreArchivo;
-    }
-    public String buscar(String nombreArchivo){
-        //
-        return nombreArchivo;
-    }
-*/

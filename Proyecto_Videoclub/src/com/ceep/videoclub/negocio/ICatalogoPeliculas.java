@@ -1,16 +1,23 @@
 
 package com.ceep.videoclub.negocio;
 
+// CAPA DE LA LÓGICA
+// ME DEVUELVEN LOS OBJETOS DE LAS PELICULAS
+//CAPA QUE ME IMPRIME LA INFO UNA VEZ CREADOS LOS OBJETOS DE PELICULAS POR LA CAPA DE DATOS -> PELICULA
 
 public interface ICatalogoPeliculas {
      
-    void agregarPelicula(String nombre, String nombreArchivo);
+    //Agregar una película al catálogo
+    void agregarPelicula(String nombrePelicula, String nombreCatalogo);
     
-    void ListarPelicula(String nombreArchivo);
+    //Mostrar todas las películas del catalogo
+    void ListarPelicula(String nombreCatalogo);
     
-    void buscarPelicula(String nombreArchivo, String buscar);
+    //Busca la película "Buscar" en nuestro catálogo
+    void buscarPelicula(String nombreCatalogo, String buscar);
     
-    void iniciarPelicula(String nombreArchivo);
+    //Inicia nuestro catálogo
+    void iniciarCatálogo(String nombreCatalogo);
     
     
     

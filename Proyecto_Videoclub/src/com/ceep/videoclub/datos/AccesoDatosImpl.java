@@ -112,10 +112,10 @@ public class AccesoDatosImpl implements IAccesoDatos {
             entrada.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace(System.out);
-            throw new LecturaDatosEx("Error en el listado de las peliculas (FNE desde biuscar de AcceoDatos Imp)");
+            throw new LecturaDatosEx("Error en el listado de las peliculas (FNE desde buscar de AcceoDatos Imp)");
         } catch (IOException e) {
             e.printStackTrace(System.out);
-            throw new LecturaDatosEx("Error en el listado de las peliculas (IO desde biuscar de AcceoDatos Imp)");
+            throw new LecturaDatosEx("Error en el listado de las peliculas (IO desde buscar de AcceoDatos Imp)");
         }
         return mensaje; // retunr resultado
     }
